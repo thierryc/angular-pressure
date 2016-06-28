@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="psEvents">
+  <head>
+    <style type="text/css">
+      html, body {
+        background-color: #d1c9b8;
+      }
+
+      #target {
+        width: 500px;
+        height: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+        text-align: center;
+        color: white;
+        background-color: #444;
+        font-size: 36pt;
+        font-family: 'Futura', 'Avenir', 'Helvetica', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="target"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart"
+      ps-force-touch-end="onForceTouchEnd"
+      ps-force-touch="onForceTouch"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress"
+      ps-force-touch-end-deep-press="onForceTouchEndDeepPress"
+      ps-force-touch-changes="onForceTouchChange"
+      ps-force-touch-unsupported="onForceTouchUnsupported"
+      >
+        {{eventType}}
+    </div>
+    <script type="text/javascript" src="./pressure.js"></script>
+    <script type="text/javascript" src="./angular.js"></script>
+    <script type="text/javascript" src="./angular.pressure.js"></script>
+    <script type="text/javascript">
+      /**
+       * @ngInject
+       */
+      angular.module('psEvents', ['psForceTouchEvents'])
+        .controller('psCtrl', function ($scope) {
+          $scope.eventType = "No events yet";
+          
+          $scope.onForceTouchStart = function(event) {
+            console.log('onForceTouchStart');
+            console.log(event);
+            //$scope.eventType = event.type;
+          };
+          
+          $scope.onForceTouchEnd = function(event) {
+            console.log('onForceTouchEnd');
+            console.log(event);
+            //$scope.eventType = event.type;
+          };
+          
+          // change
+          $scope.onForceTouch = function() {
+            console.log(arguments);
+            //$scope.eventType = arg[1];
+          };
+          
+          
+          $scope.onForceTouchStartDeepPress = function(event) {
+            //console.log('onForceTouchStartDeepPress');
+            //console.log(event);
+            $scope.eventType = 'onForceTouchStartDeepPress';
+          };
+          $scope.onForceTouchEndDeepPress = function(event) {
+            console.log('onForceTouchEndDeepPress');
+            console.log(event);
+            //$scope.eventType = event.type;
+          };
+          $scope.onForceTouchChange = function(event) {
+            console.log('onForceTouchChange');
+            console.log(event);
+            //$scope.eventType = event.type;
+          };
+          $scope.onForceTouchUnsupported = function(event) {
+            console.log('onForceTouchUnsupported');
+            console.log(event);
+            //$scope.eventType = event.type;
+          };
+        
+        });
+    </script>
+  </body>
+</html>
