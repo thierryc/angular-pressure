@@ -12,9 +12,13 @@ For the moment this sensible fallback polyfill is enabled.
 
 Install using [Bower](http://bower.io/).
 
+_SOON_
+
 ```bash $ bower install --save thierryc-angular-pressure ```
 
 Install using [NPM](https://www.npmjs.com/).
+
+_SOON_
 
 ```shell $ npm install --save angular-pressure ```
 
