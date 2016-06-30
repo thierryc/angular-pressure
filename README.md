@@ -43,9 +43,13 @@ The following list shows the Hammer event and corresponding Angular directive. E
 
 Behaviors to be executed on an event are defined as values of the attribute. This value is parsed as a [Angular expression](https://docs.angularjs.org/guide/expression). Beware, invalid Angular expressions will throw an Angular error with those terrible call stacks.
 
-Example Definition:
+Example :
 
 ```html
+
+  <div ps-force-touch-end-deep-press="count = count + 1" ng-init="count = 0">
+    {{count}}
+  </div>
 
 ```
 
