@@ -1,6 +1,6 @@
 # angular-pressure
 
-A [Angular.js](https://angularjs.org/) module [angular-pressure](https://github.com/thierryc/angular-pressure)is that enables you to bind custom behavior to [pressure.js](http://pressurejs.com/) a JavaScript library that makes dealing with Apple's Force Touch and 3D Touch simple.
+A [Angular.js](https://angularjs.org/) module [angular-pressure](https://github.com/thierryc/angular-pressure) is that enables you to bind custom behavior to [pressure.js](http://pressurejs.com/) a JavaScript library that makes dealing with Apple's Force Touch and 3D Touch simple.
 
 Force Touch for new Macs and 3D Touch for the new iPhone 6s and 6s Plus, all bundled under one roof with a simple API that makes working with them.
 
