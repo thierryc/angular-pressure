@@ -46,10 +46,6 @@
       event: 'endDeepPress'
     },
     {
-      directive: 'psForceTouchChange',
-      event: 'change'
-    },
-    {
       directive: 'psForceTouchUnsupported',
       event: 'unsupported'
     }
@@ -95,43 +91,40 @@
      psForceTouchEvents.directive(type.directive, ['$parse', '$window', NAME, function ($parse, $window, defaultEvents) {
         return {
           restrict: 'A',
-          scope: false,
-          link: function (scope, element, attrs) {
-
-            // Check for Pressure and required functionality.
-            // error if they arent found as unexpected behaviour otherwise            
+          scope: false,        
+          compile: function($element, attr) {
             if (!Pressure || !$window.addEventListener) {
               throw Error(NAME+": window.Pressure or window.addEventListener not found, can't add event " + type.directive);
-            }
-                        
-            // Obtain and wrap our handler function
-            var handlerExpr = $parse(attrs[type.directive]).bind(null,scope);
-            var handler = function (event) {
+            }           
+            // We expose the powerful $event object on the scope that provides access to the Window,
+            // etc. that isn't protected by the fast paths in $parse.  We explicitly request better
+            // checks at the cost of speed since event handler expressions are not executed as
+            // frequently as regular change detection.
+            var fn = $parse(attr[type.directive], /* interceptorFn */ null, /* expensiveChecks */ true);
+            return function psEventHandler(scope, element) {
+              var settings = {};
+              settings[type.event] = function () {
+                var handlerScope = {};
+                switch (arguments.length) {
+                  case 2:
+                    handlerScope = { 'force': arguments[0], '$event': arguments[1] };
+                    break;
+                  case 1:
+                    handlerScope = { '$event': arguments[0] };
+                    break;
+                }
+              	var callback = function() {
+                  fn(scope, handlerScope);
+                };
+                scope.$apply(callback);
+              };
               
-              // todo update arguments
-              
-              //console.log(arguments);
-              scope.$apply(function(){
-                handlerExpr({ '$event': event })();
+              angular.forEach(element, function (el) {
+                // todo get options
+                Pressure.set(el, settings, {polyfill: true});
               });
+              
             };
-            
-            var settings = {};
-            settings[type.event] = handler;
-            
-            var isElement = function(o){
-              return (
-                typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
-                o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName==="string"
-              );
-            };
-            
-            angular.forEach(element, function (el) {
-              // todo get options
-              Pressure.set(el, settings, {polyfill: true});
-            });
-
-            
           }
         };
       }]);
