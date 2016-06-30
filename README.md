@@ -35,22 +35,28 @@ The `psForceTouchEvents` module provides a series of attributes [directives](htt
 The following list shows the Hammer event and corresponding Angular directive. Events on the top level are fired every time a gesture (pressure) of that type happens.
 
 - ps-force-touch-start: psForceTouchStart (event)
+  
   this is called on force start
   
 - ps-force-touch-end: psForceTouchEnd
+  
   this is called on force end
   
 - ps-force-touch: psForceTouch (event, force)
+  
   this is called every time there is a change in pressure force will always be a value from 0 to 1 on mobile and desktop
   
 - ps-force-touch-start-deep-press: psForceTouchStartDeepPress
+  
   this is called on "force click" / "deep press", aka once the force is greater than 0.5
   
 - ps-force-touch-end-deep-pres: psForceTouchEndDeepPress (event)
+  
   this is called when the "force click" / "deep press" end
   
 - ps-force-touch-unsupported: psForceTouchUnsupported 
-  // this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
+  
+ this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
 
 Behaviors to be executed on an event are defined as values of the attribute. This value is parsed as a [Angular expression](https://docs.angularjs.org/guide/expression). Beware, invalid Angular expressions will throw an Angular error with those terrible call stacks.
 
