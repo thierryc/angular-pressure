@@ -13,12 +13,20 @@ For the moment this sensible fallback polyfill is enabled.
 Install using [Bower](http://bower.io/).
 
 
-```bash $ bower install --save thierryc-angular-pressure ```
+```bash 
+
+$ bower install --save angular-pressure 
+
+```
 
 Install using [NPM](https://www.npmjs.com/).
 
 
-```shell $ npm install --save angular-pressure ```
+```shell 
+
+$ npm install --save angular-pressure 
+
+```
 
 Add `psForceTouchEvents` to your app or module's dependencies. This module is designed to work with Angular.js v1.3.0+, and pressure.js v1.0.0+.
 
