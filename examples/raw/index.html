@@ -37,7 +37,7 @@
       ps-force-touch-unsupported="onForceTouchUnsupported()"
       ng-init="count=0;force=0"
       ><h2>{{eventType}}</h2>
-      <p>default<br>Count: {{count}}<br>Force: {{force}}</p></div>
+      <p>default<br>Count: {{count}}<br>Force: {{force}} ({{forceG}})</p></div>
 
     <div id="target1" class="btn-test"
       ng-controller="psCtrl"
@@ -96,6 +96,8 @@
       angular.module('psEvents', ['psForceTouchEvents'])
         .controller('psCtrl', function ($scope) {
           $scope.eventType = "No events yet";
+          $scope.force = 0;
+          $scope.forceG = 0;
           
           $scope.onForceTouchStart = function(event) {
             //console.log('onForceTouchStart');
@@ -112,6 +114,7 @@
           // change
           $scope.onForceTouch = function(event, force) {
             $scope.force = Pressure.map(force, 0, 1, 0, 100).toFixed(0);
+            $scope.forceG = Pressure.map(force, 0, 1, 0, 445.7).toFixed(2) + 'g';
             //console.log(angular.element(document.querySelector('#target')));
             event.element.css('backgroundColor', "rgb(" + parseInt(Pressure.map(force, 0, 1, 255, 0)) + ",200," + parseInt(Pressure.map(force, 0, 1, 0, 255)) +")");
             event.element.css('width', Pressure.map(force, 0, 1, 500, 600) + "px");
