@@ -83,7 +83,7 @@ Example :
 
 ```html
 
-  <div ps-force-touch-end-deep-press="count = count + 1" ng-init="count = 0" ps-force-touch-options="{polyfill: false}">
+  <div ps-force-touch-end-deep-press="count = count + 1" ps-force-touch-options="{polyfill: false}" ng-init="count = 0">
     {{count}}
   </div>
 
