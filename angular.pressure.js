@@ -103,6 +103,9 @@
             var fn = $parse(attr[type.directive], /* interceptorFn */ null, /* expensiveChecks */ true);
             return function psEventHandler(scope, element) {
               var settings = {};
+              var options = {};
+              var defaultOptions = {polyfill: true};
+              
               settings[type.event] = function () {
                 var handlerScope = {};
                 switch (arguments.length) {
@@ -120,10 +123,14 @@
                 };
                 scope.$apply(callback);
               };
+              if (attr.psForceTouchOptions) {
+                var options = scope.$eval(attr.psForceTouchOptions);
+              }
+              options = angular.merge(defaultOptions, options);
               
               angular.forEach(element, function (el) {
                 // todo get options
-                Pressure.set(el, settings, {polyfill: true});
+                Pressure.set(el, settings, options);
               });
               
             };

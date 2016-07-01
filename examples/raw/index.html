@@ -15,7 +15,6 @@
       .btn-test {
         border-radius: 5px;
         width: 400px;
-        height: 200px;
         padding: 5px;
         margin: 5px auto;
         vertical-align: middle;
@@ -27,20 +26,7 @@
     </style>
   </head>
   <body>
-    <div id="target" class="btn-test"
-      ng-controller="psCtrl"
-      ps-force-touch-start="onForceTouchStart($event)"
-      ps-force-touch-end="onForceTouchEnd()"
-      ps-force-touch="onForceTouch($event, force)"
-      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
-      ps-force-touch-end-deep-press="count = count + 1"
-      ps-force-touch-unsupported="onForceTouchUnsupported()"
-      ng-init="count=0;force=0"
-      >
-      <h2>{{eventType}}</h2>
-      <p>Count: {{count}}<br>Force: {{force}}</p>
-      </div>
-    
+
     <div id="target0" class="btn-test"
       ng-controller="psCtrl"
       ps-force-touch-start="onForceTouchStart($event)"
@@ -51,7 +37,54 @@
       ps-force-touch-unsupported="onForceTouchUnsupported()"
       ng-init="count=0;force=0"
       ><h2>{{eventType}}</h2>
-      <p>Count: {{count}}<br>Force: {{force}}</p></div>
+      <p>default<br>Count: {{count}}<br>Force: {{force}}</p></div>
+
+    <div id="target1" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart($event)"
+      ps-force-touch-end="onForceTouchEnd()"
+      ps-force-touch="onForceTouch($event, force)"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
+      ps-force-touch-end-deep-press="count = count + 1"
+      ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ps-force-touch-options="{polyfill: false}"
+      ng-init="count=0;force=0"
+      >
+      <h2>{{eventType}}</h2>
+      <p>{polyfill: false}<br>Count: {{count}}<br>Force: {{force}}</p>
+      </div>
+    
+    <div id="target2" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart($event)"
+      ps-force-touch-end="onForceTouchEnd()"
+      ps-force-touch="onForceTouch($event, force)"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
+      ps-force-touch-end-deep-press="count = count + 1"
+      ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ps-force-touch-options="{only: '3d'}"
+      ng-init="count=0;force=0"
+      >
+      <h2>{{eventType}}</h2>
+      <p>{only: '3d'}<br>Count: {{count}}<br>Force: {{force}}</p>
+      </div>
+      
+    <div id="target3" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart($event)"
+      ps-force-touch-end="onForceTouchEnd()"
+      ps-force-touch="onForceTouch($event, force)"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
+      ps-force-touch-end-deep-press="count = count + 1"
+      ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ps-force-touch-options="{only: 'force'}"
+      ng-init="count=0;force=0"
+      >
+      <h2>{{eventType}}</h2>
+      <p>{only: 'force'}<br>Count: {{count}}<br>Force: {{force}}</p>
+      </div>
+    
+
     
     <script type="text/javascript" src="./pressure.js"></script>
     <script type="text/javascript" src="./angular.js"></script>
