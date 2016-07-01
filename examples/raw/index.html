@@ -3,25 +3,31 @@
   <head>
     <style type="text/css">
       html, body {
-        background-color: #d1c9b8;
+        background-color: #ffffff;
+        font-size: 16pt;
+        font-family: 'Futura', 'Avenir', 'Helvetica', sans-serif;
+      }
+      
+      h2 {
+        font-size: 26pt;
       }
 
-      #target {
-        width: 500px;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
+      .btn-test {
+        border-radius: 5px;
+        width: 400px;
+        height: 200px;
+        padding: 5px;
+        margin: 5px auto;
         vertical-align: middle;
         text-align: center;
         color: white;
-        background-color: rgb(0,200,0);
-        font-size: 36pt;
-        font-family: 'Futura', 'Avenir', 'Helvetica', sans-serif;
+        background-color: rgb(255,200,0);
+        
       }
     </style>
   </head>
   <body>
-    <div id="target"
+    <div id="target" class="btn-test"
       ng-controller="psCtrl"
       ps-force-touch-start="onForceTouchStart($event)"
       ps-force-touch-end="onForceTouchEnd()"
@@ -31,8 +37,22 @@
       ps-force-touch-unsupported="onForceTouchUnsupported()"
       ng-init="count=0;force=0"
       >
-        {{eventType}}{{count}}<br>{{force}}
-    </div>
+      <h2>{{eventType}}</h2>
+      <p>Count: {{count}}<br>Force: {{force}}</p>
+      </div>
+    
+    <div id="target0" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart($event)"
+      ps-force-touch-end="onForceTouchEnd()"
+      ps-force-touch="onForceTouch($event, force)"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
+      ps-force-touch-end-deep-press="count = count + 1"
+      ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ng-init="count=0;force=0"
+      ><h2>{{eventType}}</h2>
+      <p>Count: {{count}}<br>Force: {{force}}</p></div>
+    
     <script type="text/javascript" src="./pressure.js"></script>
     <script type="text/javascript" src="./angular.js"></script>
     <script type="text/javascript" src="./angular.pressure.js"></script>
@@ -60,8 +80,8 @@
           $scope.onForceTouch = function(event, force) {
             $scope.force = Pressure.map(force, 0, 1, 0, 100).toFixed(0);
             //console.log(angular.element(document.querySelector('#target')));
-            event.target.style.backgroundColor = "rgb(" + parseInt(Pressure.map(force, 0, 1, 255, 0)) + ",200," + parseInt(Pressure.map(force, 0, 1, 0, 255)) +")";
-            event.target.style.width = Pressure.map(force, 0, 1, 500, 600) + "px";
+            event.element.css('backgroundColor', "rgb(" + parseInt(Pressure.map(force, 0, 1, 255, 0)) + ",200," + parseInt(Pressure.map(force, 0, 1, 0, 255)) +")");
+            event.element.css('width', Pressure.map(force, 0, 1, 500, 600) + "px");
             //console.log(this);
             //$scope.eventType = arg[1];
           };

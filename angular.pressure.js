@@ -107,9 +107,11 @@
                 var handlerScope = {};
                 switch (arguments.length) {
                   case 2:
+                    arguments[1].element = $element;
                     handlerScope = { 'force': arguments[0], '$event': arguments[1] };
                     break;
                   case 1:
+                    arguments[0].element = $element;
                     handlerScope = { '$event': arguments[0] };
                     break;
                 }
