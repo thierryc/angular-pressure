@@ -78,17 +78,17 @@ Example :
 
 ```
 
-Example Definition:
+### angular-pressure Options
 
-_SOON_
 
 ```html
 
+  <div ps-force-touch-end-deep-press="count = count + 1" ng-init="count = 0" ps-force-touch-options="{polyfill: false}">
+    {{count}}
+  </div>
+
 ```
 
-### angular-pressure Options
-
-_SOON_
 
 ## Demo
 
