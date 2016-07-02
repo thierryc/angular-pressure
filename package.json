@@ -33,9 +33,9 @@
     "pressure": "^1.0.1"
   },
   "devDependencies": {
-    "browserify": "^8.0.3",
+    "browserify": "^13.0.1",
     "browserify-shim": "^3.8.2",
-    "finalhandler": "^0.3.2",
+    "finalhandler": "^0.5.0",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
     "grunt-concurrent": "^2.3.0",
