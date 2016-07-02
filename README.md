@@ -1,4 +1,4 @@
-# angular-pressure
+# Angular Pressure (angular-pressure)
 
 A [Angular.js](https://angularjs.org/) module [angular-pressure](https://github.com/thierryc/angular-pressure) is that enables you to bind custom behavior to [pressure.js](http://pressurejs.com/) a JavaScript library that makes dealing with Apple's Force Touch and 3D Touch simple.
 
