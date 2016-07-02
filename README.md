@@ -96,3 +96,9 @@ Example :
 ## Demo
 
 _SOON_
+
+
+## Other Interesting Links about 3dtouch or pressure.js
+
+[cordova-plugin-3dtouch](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch)
+[pressure.js](http://pressurejs.com/)
