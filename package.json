@@ -16,10 +16,13 @@
   "keywords": [
     "pressurejs",
     "angular",
+    "angularjs",
+    "angular.js",
     "javascript",
     "touch",
     "force",
-    "3Dtouch"
+    "3Dtouch",
+    "iOS"
   ],
   "author": "Thierry Charbonnel",
   "contributors": [],
