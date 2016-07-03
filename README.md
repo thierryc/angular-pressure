@@ -61,7 +61,7 @@ The following list shows the Hammer event and corresponding Angular directive. E
   this is called when the “force click”/“deep press” end
 
   - ps-force-touch-unsupported: psForceTouchUnsupported 
-  - 
+  
   this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
 
 Behaviors to be executed on an event are defined as values of the attribute. This value is parsed as a [Angular expression](https://docs.angularjs.org/guide/expression). Beware, invalid Angular expressions will throw an Angular error with those terrible call stacks.
