@@ -98,7 +98,7 @@ Example :
 _SOON_
 
 
-## Other Interesting Links about 3dtouch or pressure.js
+## Other Interesting Links about 3D Touch or Pressure.js
 
 [cordova-plugin-3dtouch](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch)
 [pressure.js](http://pressurejs.com/)
