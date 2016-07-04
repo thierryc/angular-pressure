@@ -126,7 +126,8 @@
               if (attr.psForceTouchOptions) {
                 var options = scope.$eval(attr.psForceTouchOptions);
               }
-              options = angular.merge(defaultOptions, options);
+              // angular.merge remplaced by for a better compatibility angular.extend
+              options = angular.extend(defaultOptions, options);
               
               angular.forEach(element, function (el) {
                 // todo get options
