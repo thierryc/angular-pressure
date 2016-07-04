@@ -133,7 +133,6 @@
                 // todo get options
                 Pressure.set(el, settings, options);
               });
-              
             };
           }
         };

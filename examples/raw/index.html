@@ -35,6 +35,7 @@
       ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
       ps-force-touch-end-deep-press="count = count + 1"
       ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ps-force-touch-options="{polyfill: true, preventDefault: false}"
       ng-init="count=0;force=0"
       ><h2>{{eventType}}</h2>
       <p>default<br>Count: {{count}}<br>Force: {{force}} ({{forceG}})</p></div>
@@ -47,7 +48,7 @@
       ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
       ps-force-touch-end-deep-press="count = count + 1"
       ps-force-touch-unsupported="onForceTouchUnsupported()"
-      ps-force-touch-options="{polyfill: false}"
+      ps-force-touch-options="{polyfill: false, preventDefault: false}"
       ng-init="count=0;force=0"
       >
       <h2>{{eventType}}</h2>
