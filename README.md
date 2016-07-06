@@ -88,4 +88,5 @@ _SOON_
 
 ## Other Interesting Links about 3D Touch or Pressure.js
 
-[cordova-plugin-3dtouch](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch) [pressure.js](http://pressurejs.com/)
+- [cordova-plugin-3dtouch](https://github.com/EddyVerbruggen/cordova-plugin-3dtouch) 
+- [pressure.js](http://pressurejs.com/)
