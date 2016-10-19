@@ -66,25 +66,119 @@ The following list shows the Hammer event and corresponding Angular directive. E
 
 Behaviors to be executed on an event are defined as values of the attribute. This value is parsed as a [Angular expression](https://docs.angularjs.org/guide/expression). Beware, invalid Angular expressions will throw an Angular error with those terrible call stacks.
 
-Example:
+
+####Example:
 
 ```html
 
-{{count}}
+<div id="target0" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch-start="onForceTouchStart($event)"
+      ps-force-touch-end="onForceTouchEnd()"
+      ps-force-touch="onForceTouch($event, force)"
+      ps-force-touch-start-deep-press="onForceTouchStartDeepPress($event)"
+      ps-force-touch-end-deep-press="count = count + 1"
+      ps-force-touch-unsupported="onForceTouchUnsupported()"
+      ps-force-touch-options="{polyfill: true, preventDefault: false}"
+      ng-init="count=0;force=0"
+      ><h2>{{eventType}}</h2>
+      <p>default<br>Count: {{count}}<br>Force: {{force}}</p></div>
 
 ```
+
+####Javascript:
+
+```javascript
+
+  /**
+   * @psEvents
+   */
+  angular.module('psEvents', ['psForceTouchEvents'])
+    .controller('psCtrl', function ($scope) {
+      $scope.eventType = "No events yet";
+      $scope.force = 0;
+      $scope.forceG = 0;
+      
+      $scope.onForceTouchStart = function(event) {
+        // on Force Touch Start
+        $scope.eventType = event.type;
+      };
+      
+      $scope.onForceTouchEnd = function(event) {
+        // on Force Touch End
+      };
+      
+      // change
+      $scope.onForceTouch = function(event, force) {
+        // on Force Touch
+        $scope.force = Pressure.map(force, 0, 1, 0, 100).toFixed(0);
+        $scope.forceG = Pressure.map(force, 0, 1, 0, 445.7).toFixed(2) + 'g'; // force (simulation) Gram. 
+        event.element.css('backgroundColor', "rgb(" + parseInt(Pressure.map(force, 0, 1, 255, 0)) + ",200," + parseInt(Pressure.map(force, 0, 1, 0, 255)) +")");
+        event.element.css('width', Pressure.map(force, 0, 1, 500, 600) + "px");
+      };
+      
+      $scope.onForceTouchStartDeepPress = function(event) {
+        // on Force Touch Start Deep Press
+        $scope.eventType = event.type;
+      };
+      
+      $scope.onForceTouchEndDeepPress = function() {
+        // on Force Touch End Deep Press
+        $scope.eventType = event.type;
+      };
+      
+      $scope.onForceTouchUnsupported = function(event) {
+        // on Force Touch Unsupported
+      };
+    
+    });
+    
+```
+
 
 ### angular-pressure Options
 
 ```html
 
-{{count}}
+<div id="target0" class="btn-test"
+      ng-controller="psCtrl"
+      ps-force-touch="onForceTouch($event, force)"
+      
+      ps-force-touch-options="{polyfill: true, preventDefault: false}"
+      
+      ng-init="count=0;force=0"
+      ><h2>{{eventType}}</h2>
+      <p>default<br>Count: {{count}}<br>Force: {{force}}</p></div>
+
+```
+
+####examples:
+
+``` 
+
+{
+  polyfill: true,
+  polyfillSpeed: 1000,
+  preventDefault: true,
+  only: null
+}
 
 ```
 
 ## Demo
 
 _SOON_
+
+
+```
+
+> gunt 
+
+open http://0.0.0.0:3000/raw/index.html
+
+```
+
+
 
 ## Other Interesting Links about 3D Touch or Pressure.js
 

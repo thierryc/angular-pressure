@@ -21,7 +21,6 @@
         text-align: center;
         color: white;
         background-color: rgb(255,200,0);
-        
       }
     </style>
   </head>
@@ -92,7 +91,7 @@
     <script type="text/javascript" src="./angular.pressure.js"></script>
     <script type="text/javascript">
       /**
-       * @ngInject
+       * @psEvents
        */
       angular.module('psEvents', ['psForceTouchEvents'])
         .controller('psCtrl', function ($scope) {
@@ -101,42 +100,35 @@
           $scope.forceG = 0;
           
           $scope.onForceTouchStart = function(event) {
-            //console.log('onForceTouchStart');
-            //console.log(event);
+            // on Force Touch Start
             $scope.eventType = event.type;
           };
           
           $scope.onForceTouchEnd = function(event) {
-            //console.log('onForceTouchEnd');
-            //console.log(event);
-            //$scope.eventType = event.type;
+            // on Force Touch End
           };
           
           // change
           $scope.onForceTouch = function(event, force) {
+            // on Force Touch
             $scope.force = Pressure.map(force, 0, 1, 0, 100).toFixed(0);
-            $scope.forceG = Pressure.map(force, 0, 1, 0, 445.7).toFixed(2) + 'g';
-            //console.log(angular.element(document.querySelector('#target')));
+            $scope.forceG = Pressure.map(force, 0, 1, 0, 445.7).toFixed(2) + 'g'; // force (simulation) Gram. 
             event.element.css('backgroundColor', "rgb(" + parseInt(Pressure.map(force, 0, 1, 255, 0)) + ",200," + parseInt(Pressure.map(force, 0, 1, 0, 255)) +")");
             event.element.css('width', Pressure.map(force, 0, 1, 500, 600) + "px");
-            //console.log(this);
-            //$scope.eventType = arg[1];
           };
           
           $scope.onForceTouchStartDeepPress = function(event) {
-            //console.log('onForceTouchStartDeepPress');
-            //console.log(event);
+            // on Force Touch Start Deep Press
             $scope.eventType = event.type;
           };
           
           $scope.onForceTouchEndDeepPress = function() {
+            // on Force Touch End Deep Press
             $scope.eventType = event.type;
           };
           
           $scope.onForceTouchUnsupported = function(event) {
-            //console.log('onForceTouchUnsupported');
-            //console.log(event);
-            //$scope.eventType = event.type;
+            // on Force Touch Unsupported
           };
         
         });
