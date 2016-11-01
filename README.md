@@ -178,7 +178,7 @@ _SOON_
 
 ```
 
-> gunt 
+> grunt 
 
 open http://0.0.0.0:3000/raw/index.html
 
