@@ -38,7 +38,7 @@ $ npm install --save angular-pressure
 
 ### Map file
 
-[https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js.map](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js.map)
+[https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js.map](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js.map)
 
 
 ## Note
