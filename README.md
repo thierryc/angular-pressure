@@ -28,7 +28,18 @@ $ npm install --save angular-pressure
 
 ### CDN usage [jsdelivr](http://www.jsdelivr.com/?query=%2Fangular.pressure).
 
+### Min file
+
 [https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js)
+
+### Js file
+
+[https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js)
+
+### Map file
+
+[https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js.map](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.js.map)
+
 
 ## Note
 
