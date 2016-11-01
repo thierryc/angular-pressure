@@ -26,7 +26,7 @@ $ npm install --save angular-pressure
 
 ```
 
-### CDN usage [jsdelivr](http://www.jsdelivr.com/?query=%2Fangular.pressure.
+### CDN usage [jsdelivr](http://www.jsdelivr.com/?query=%2Fangular.pressure).
 
 [https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js)
 
