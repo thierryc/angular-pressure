@@ -10,7 +10,7 @@ Sensible fallback polyfill is enabled by default.
 
 ## Installation
 
-Install using [Bower](http://bower.io/).
+### Install using [Bower](http://bower.io/).
 
 ```bash 
 
@@ -18,7 +18,7 @@ $ bower install --save angular-pressure
 
 ```
 
-Install using [NPM](https://www.npmjs.com/).
+### Install using [NPM](https://www.npmjs.com/).
 
 ```shell 
 
@@ -26,7 +26,13 @@ $ npm install --save angular-pressure
 
 ```
 
-Add `psForceTouchEvents` to your app or module’s dependencies. This module is designed to work with Angular.js v1.3.0+, and pressure.js v1.0.0+.
+### CDN usage [jsdelivr](http://www.jsdelivr.com/?query=%2Fangular.pressure.
+
+[https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js](https://cdn.jsdelivr.net/angular.pressure/2.0.1/angular.pressure.min.js)
+
+## Note
+
+Add `psForceTouchEvents` to your app or module’s dependencies. This module is designed to work with Angular.js v1.3.0+, and pressure.js v2.0.0+.
 
 A Note on Angular.js 2.0
 
